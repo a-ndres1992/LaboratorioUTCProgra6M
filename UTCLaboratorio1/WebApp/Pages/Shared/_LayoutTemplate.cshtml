@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />
     <title>@ViewData["Title"] - WebApp</title>
-    
+    @await Html.PartialAsync("_HeaderTemplate")
+
 </head>
 <body>
 
@@ -298,7 +299,7 @@
                                     Account Setting
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" >
+                                <a class="dropdown-item">
                                     <i data-feather="log-out"
                                        class="feather-sm text-danger me-1 ms-1"></i> Logout
                                 </a>
@@ -334,7 +335,7 @@
                     <div class="profile-text pt-1 dropdown">
                         <a href="#" class="dropdown-toggle u-dropdown w-100 text-white d-block position-relative" id="dropdownMenuLink"
                            data-bs-toggle="dropdown" aria-expanded="false">
-                       Usuario
+                            Usuario
                         </a>
                         <div class="dropdown-menu animated flipInY" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="#">
@@ -349,7 +350,7 @@
                                 Account Setting
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" >
+                            <a class="dropdown-item">
                                 <i data-feather="log-out"
                                    class="feather-sm text-danger me-1 ms-1"></i> Logout
                             </a>
@@ -373,50 +374,20 @@
                             <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
                                aria-expanded="false">
                                 <i class="mdi mdi-gauge"></i>
-                                <span class="hide-menu">Matenimientos </span>
+                                <span class="hide-menu">Mantenimientos </span>
                             </a>
                             <ul aria-expanded="false" class="collapse  first-level">
 
                                 <li class="sidebar-item">
-                                    <a  class="sidebar-link">
+                                    <a asp-page="/Proveedor/Grid" class="sidebar-link">
                                         <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Vehiculos </span>
+                                        <span class="hide-menu"> Proveedores </span>
                                     </a>
                                 </li>
-
-                                <li class="sidebar-item">
-                                    <a class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Marcar Vehiculo </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a  class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Agencia </span>
-                                    </a>
-                                </li>
-
                             </ul>
                         </li>
 
-                        <li class="sidebar-item">
-                            <a class="sidebar-link  waves-effect waves-dark" 
-                               aria-expanded="false">
-                                <i class="mdi mdi-face"></i>
-                                <span class="hide-menu">Clientes </span>
-                            </a>
-
-                        </li>
-
-                        <li class="sidebar-item">
-                            <a class="sidebar-link  waves-effect waves-dark" 
-                               aria-expanded="false">
-                                <i class="mdi mdi-car"></i>
-                                <span class="hide-menu">Alquiler </span>
-                            </a>
-
-                        </li>
+                       
 
 
                     </ul>
@@ -622,7 +593,7 @@
         </div>
     </aside>
 
-    
+    @await Html.PartialAsync("_ScriptsTemplate")
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

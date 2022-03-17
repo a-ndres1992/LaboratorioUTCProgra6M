@@ -1,29 +1,33 @@
-﻿CREATE PROCEDURE [dbo].[ProovedorActualizar]
-	@IdProovedor INT,
+﻿CREATE PROCEDURE [dbo].[ProveedorInsertar]
 	@Identificacion VARCHAR(250),
 	@Nombre VARCHAR(250),
 	@PrimerApellido VARCHAR(250),
 	@SegundoApellido VARCHAR(250),
 	@Edad INT,
 	@FechaNacimiento DATETIME
-
 AS
 Begin
 	SET NOCOUNT ON
 		BEGIN TRANSACTION TRASA
 			BEGIN TRY
 
-				UPDATE dbo.Proveedor SET
-		            Identificacion = @Identificacion
-				   ,Nombre = @Nombre
-				   ,PrimerApellido = @PrimerApellido
-				   ,SegundoApellido = @SegundoApellido
-				   ,Edad = @Edad
-				   ,FechaNacimiento = @FechaNacimiento
-				
-				WHERE
-					IdProovedor = @IdProovedor
-
+				INSERT INTO dbo.Proveedor
+		        (   Identificacion
+				   ,Nombre
+				   ,PrimerApellido
+				   ,SegundoApellido
+				   ,Edad
+				   ,FechaNacimiento
+				)
+				VALUES
+				(
+					@Identificacion
+				   ,@Nombre
+				   ,@PrimerApellido
+				   ,@SegundoApellido
+				   ,@Edad
+				   ,@FechaNacimiento
+				)
 				COMMIT TRANSACTION TRASA
 				SELECT 0 AS CodeError, '' AS MsgError
 

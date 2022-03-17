@@ -1,5 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[ProovedorEliminar]
-	@IdProovedor INT
+﻿CREATE PROCEDURE [dbo].[ProveedorEliminar]
+	@IdProveedor INT
 
 	AS
 Begin
@@ -10,7 +10,7 @@ Begin
 				DELETE FROM 
 					dbo.Proveedor
 				WHERE
-					IdProovedor = @IdProovedor
+					IdProveedor = @IdProveedor
 
 				COMMIT TRANSACTION TRASA
 				SELECT 0 AS CodeError, '' AS MsgError

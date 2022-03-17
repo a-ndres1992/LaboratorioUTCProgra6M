@@ -1,11 +1,11 @@
-﻿CREATE PROCEDURE [dbo].[ProovedorObtener]
-	@IdProovedor INT = NULL
+﻿CREATE PROCEDURE [dbo].[ProveedorObtener]
+	@IdProveedor INT = NULL
 AS
 BEGIN
 	SET NOCOUNT ON
 
 	SELECT 
-		 IdProovedor
+		 IdProveedor
 		,Identificacion
 		,Nombre
 		,PrimerApellido
@@ -16,7 +16,7 @@ BEGIN
 	FROM 
 		dbo.Proveedor
 	WHERE 
-		(@IdProovedor IS NULL OR @IdProovedor = IdProovedor)
+		(@IdProveedor IS NULL OR @IdProveedor = IdProveedor)
 
 END
 

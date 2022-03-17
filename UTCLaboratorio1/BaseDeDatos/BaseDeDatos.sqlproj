@@ -62,9 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Proveedor.sql" />
-    <Build Include="dbo\StoreProcedures\ProovedorObtener.sql" />
-    <Build Include="dbo\StoreProcedures\ProovedorInsertar.sql" />
-    <Build Include="dbo\StoreProcedures\ProovedorActualizar.sql" />
-    <Build Include="dbo\StoreProcedures\ProovedorEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\ProveedorObtener.sql" />
+    <Build Include="dbo\StoreProcedures\ProveedorInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\ProveedorActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\ProveedorEliminar.sql" />
   </ItemGroup>
 </Project>

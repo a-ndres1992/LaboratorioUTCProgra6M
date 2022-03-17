@@ -6,11 +6,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.6" />
+    <Compile Remove="wwwroot\App\Proverdor\**" />
+    <Content Remove="wwwroot\App\Proverdor\**" />
+    <EmbeddedResource Remove="wwwroot\App\Proverdor\**" />
+    <None Remove="wwwroot\App\Proverdor\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\App\" />
+    <Content Remove="wwwroot\App\Proveedor\Edit.ts" />
+    <Content Remove="wwwroot\App\Proveedor\Grid.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.6" />
   </ItemGroup>
 
   <ItemGroup>
@@ -71,6 +79,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\App\Proveedor\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Proveedor\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\Assets\%40types\Apexchart\index.d.ts" />
     <TypeScriptCompile Include="wwwroot\Assets\%40types\axios\index.d.ts" />
     <TypeScriptCompile Include="wwwroot\Assets\%40types\bootstrap-validator\bvenums.ts" />

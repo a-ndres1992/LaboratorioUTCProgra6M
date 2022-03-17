@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WBL", "WBL\WBL.csproj", "{5
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BaseDeDatos", "BaseDeDatos\BaseDeDatos.sqlproj", "{F7DBA73E-792F-49D4-ABD5-5CB3814C7007}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{39A8B868-D1B9-4AFD-A29C-ED29F789557A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{39A8B868-D1B9-4AFD-A29C-ED29F789557A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -10,11 +10,11 @@ namespace WBL
 {
     public interface IProveedorService
     {
-        Task<DBEntity> Create(ProovedorEntity entity);
-        Task<DBEntity> Delete(ProovedorEntity entity);
-        Task<IEnumerable<ProovedorEntity>> Get();
-        Task<ProovedorEntity> GetById(ProovedorEntity entity);
-        Task<DBEntity> Update(ProovedorEntity entity);
+        Task<DBEntity> Create(ProveedorEntity entity);
+        Task<DBEntity> Delete(ProveedorEntity entity);
+        Task<IEnumerable<ProveedorEntity>> Get();
+        Task<ProveedorEntity> GetById(ProveedorEntity entity);
+        Task<DBEntity> Update(ProveedorEntity entity);
     }
 
     public class ProveedorService : IProveedorService
@@ -29,12 +29,12 @@ namespace WBL
         #region MetodosCrud
 
         //Metodo Get
-        public async Task<IEnumerable<ProovedorEntity>> Get()
+        public async Task<IEnumerable<ProveedorEntity>> Get()
         {
 
             try
             {
-                var result = sql.QueryAsync<ProovedorEntity>("dbo.ProveedorObtener");
+                var result = sql.QueryAsync<ProveedorEntity>("dbo.ProveedorObtener");
                 return await result;
             }
             catch (Exception)
@@ -47,12 +47,12 @@ namespace WBL
 
         //METODO GET BY ID
 
-        public async Task<ProovedorEntity> GetById(ProovedorEntity entity)
+        public async Task<ProveedorEntity> GetById(ProveedorEntity entity)
         {
 
             try
             {
-                var result = sql.QueryFirstAsync<ProovedorEntity>("dbo.ProveedorObtener", new { entity.IdProovedor });
+                var result = sql.QueryFirstAsync<ProveedorEntity>("dbo.ProveedorObtener", new { entity.IdProveedor });
                 return await result;
             }
             catch (Exception)
@@ -65,7 +65,7 @@ namespace WBL
 
         //METODO CREATE
 
-        public async Task<DBEntity> Create(ProovedorEntity entity)
+        public async Task<DBEntity> Create(ProveedorEntity entity)
         {
 
             try
@@ -96,14 +96,14 @@ namespace WBL
 
         //METODO Update
 
-        public async Task<DBEntity> Update(ProovedorEntity entity)
+        public async Task<DBEntity> Update(ProveedorEntity entity)
         {
 
             try
             {
                 var result = sql.ExecuteAsync("dbo.ProveedorActualizar", new
                 {
-                    entity.IdProovedor
+                    entity.IdProveedor
                    ,
                     entity.Identificacion
                    ,
@@ -129,14 +129,14 @@ namespace WBL
 
         //METODO DELETE
 
-        public async Task<DBEntity> Delete(ProovedorEntity entity)
+        public async Task<DBEntity> Delete(ProveedorEntity entity)
         {
 
             try
             {
                 var result = sql.ExecuteAsync("dbo.ProveedorEliminar", new
                 {
-                    entity.IdProovedor
+                    entity.IdProveedor
                 });
                 return await result;
             }

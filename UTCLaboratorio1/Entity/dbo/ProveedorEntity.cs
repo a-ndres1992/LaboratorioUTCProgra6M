@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class ProovedorEntity : DBEntity
+    public class ProveedorEntity : DBEntity
     {
 
-        public int? IdProovedor{get; set;}
+        public int? IdProveedor{get; set;}
         public string Identificacion { get; set; }
         public string Nombre { get; set; }
         public string PrimerApellido { get; set; }

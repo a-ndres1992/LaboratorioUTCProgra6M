@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Proveedor]
 (
-	IdProovedor INT NOT NULL IDENTITY(1,1) CONSTRAINT PK_Proovedor PRIMARY KEY CLUSTERED(IdProovedor),
+	IdProveedor INT NOT NULL IDENTITY(1,1) CONSTRAINT PK_Proveedor PRIMARY KEY CLUSTERED(IdProveedor),
 	Identificacion VARCHAR(250) NOT NULL,
     Nombre VARCHAR(250) NOT NULL,
 	PrimerApellido VARCHAR(250) NOT NULL,

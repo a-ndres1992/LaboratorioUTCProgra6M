@@ -1,0 +1,73 @@
+﻿@page
+@model WebApp.Pages.Proveedor.GridModel
+@{
+}
+
+
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            Proveedores
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Lista De Proveedores</h5>
+            <a class="btn btn-secondary" asp-page="Edit"><i class='bx bx-add-to-queue'></i></a>
+
+            <div class="row">
+                <div class="col-12">
+                    <table id="GridView" class="table table-bordered table table-hover table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>IDENTIFICACION</th>
+                                <th>NOMBRE</th>
+                                <th>PRIMER APELLIDO</th>
+                                <th>SEGUNDO APELLIDO</th>
+                                <th>EDAD</th>
+                                <th>FECHA NACIMIENTO</th>
+                                <th>ACCION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.GridList)
+                            {
+                                <tr>
+
+                                    <td>@item.IdProveedor</td>
+                                    <td>@item.Identificacion</td>
+                                    <td>@item.Nombre</td>
+                                    <td>@item.PrimerApellido</td>
+                                    <td>@item.SegundoApellido</td>
+                                    <td>@item.Edad</td>
+                                    <td>@item.FechaNacimiento</td>
+
+                                    <td>
+                                        <a class="btn btn-secondary" asp-page="Edit" asp-route-id="@item.IdProveedor"><i class='bx bxs-edit-alt'></i></a>
+                                        <button type="button" class="btn btn-secondary" onclick=" ProveedorGrid.OnClickEliminar(@item.IdProveedor)"><i class='bx bxs-trash-alt'></i></button>
+                                    </td>
+
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+
+    <script>
+
+        var MensajeApp = "@Html.Raw(Model.Mensaje)";
+
+    </script>
+
+    <script defer src="~/App/Proveedor/Grid.js"></script>
+
+}

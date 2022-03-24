@@ -71,5 +71,6 @@
     <Build Include="dbo\StoreProcedures\ContactoObtener.sql" />
     <Build Include="dbo\StoreProcedures\ContactoInsertar.sql" />
     <Build Include="dbo\StoreProcedures\ContactoEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\ProveedorLista.sql" />
   </ItemGroup>
 </Project>

@@ -15,6 +15,7 @@ namespace WBL
         Task<IEnumerable<ProveedorEntity>> Get();
         Task<ProveedorEntity> GetById(ProveedorEntity entity);
         Task<DBEntity> Update(ProveedorEntity entity);
+        Task<IEnumerable<ProveedorEntity>> GetLista();
     }
 
     public class ProveedorService : IProveedorService
@@ -26,7 +27,30 @@ namespace WBL
             sql = _sql;  
         }
 
+        #region MetodosLista
+
+        //Metodo GetLista
+        public async Task<IEnumerable<ProveedorEntity>> GetLista()
+        {
+
+            try
+            {
+                var result = sql.QueryAsync<ProveedorEntity>("dbo.ProveedorLista");
+                return await result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        #endregion
+
         #region MetodosCrud
+
+
 
         //Metodo Get
         public async Task<IEnumerable<ProveedorEntity>> Get()

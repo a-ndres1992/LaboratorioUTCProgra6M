@@ -66,5 +66,6 @@
     <Build Include="dbo\StoreProcedures\ProveedorInsertar.sql" />
     <Build Include="dbo\StoreProcedures\ProveedorActualizar.sql" />
     <Build Include="dbo\StoreProcedures\ProveedorEliminar.sql" />
+    <Build Include="dbo\Tables\Contacto.sql" />
   </ItemGroup>
 </Project>

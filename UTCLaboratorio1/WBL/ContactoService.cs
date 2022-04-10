@@ -26,9 +26,6 @@ namespace WBL
             sql = _sql;
         }
 
-
-
-
         #region MetodosCrud
 
         //Metodo Get

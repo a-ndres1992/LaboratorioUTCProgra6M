@@ -13,6 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\App\Contacto\Edit.ts" />
+    <Content Remove="wwwroot\App\Contacto\Grid.ts" />
     <Content Remove="wwwroot\App\Proveedor\Edit.ts" />
     <Content Remove="wwwroot\App\Proveedor\Grid.ts" />
   </ItemGroup>
@@ -79,6 +81,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\App\Contacto\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Contacto\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\Proveedor\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\Proveedor\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\Assets\%40types\Apexchart\index.d.ts" />

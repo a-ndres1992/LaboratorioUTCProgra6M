@@ -1,7 +1,7 @@
 ﻿
 namespace App.AxiosProvider   {
 
-    //export const GuardarEmpleado = () => axios.get<Entity.DBEntity>("aplicacion").then(({data})=>data );
+    export const ContactoEliminar = (id) => axios.delete<DBEntity>("Contacto/Grid?handler=Eliminar&id="+ id).then(({ data }) => data);
 
 
 }

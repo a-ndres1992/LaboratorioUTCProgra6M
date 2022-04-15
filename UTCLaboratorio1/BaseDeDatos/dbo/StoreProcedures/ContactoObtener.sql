@@ -5,7 +5,7 @@ BEGIN
 	SET NOCOUNT ON
 
 	SELECT 
-		 IdContacto
+		 C.IdContacto
 		,C.Identificacion
 		,C.Nombre
 		,C.PrimerApellido
@@ -18,6 +18,6 @@ BEGIN
 		 INNER JOIN dbo.Proveedor P 
 		 ON C.IdProveedor = P.IdProveedor
 	WHERE 
-		(@IdContacto IS NULL OR @IdContacto = IdContacto)
+		(@IdContacto IS NULL OR IdContacto = @IdContacto)
 
 END

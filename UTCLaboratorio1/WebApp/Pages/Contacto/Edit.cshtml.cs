@@ -6,30 +6,29 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Entity;
 using WBL;
-
 namespace WebApp.Pages.Contacto
 {
     public class EditModel : PageModel
     {
         private readonly IContactoService contactoService;
         private readonly IProveedorService proveedorService;
-
         public EditModel(IContactoService contactoService, IProveedorService proveedorService)
         {
             this.contactoService = contactoService;
             this.proveedorService = proveedorService;
         }
 
+
         [BindProperty(SupportsGet = true)]
         public int? id { get; set; }
 
         [BindProperty]
+        [FromBody]
         public ContactoEntity Entity { get; set; } = new ContactoEntity();
 
         public IEnumerable<ProveedorEntity> ProveedorLista { get; set; } = new List<ProveedorEntity>();
-
         public async Task<IActionResult> OnGet()
-        { 
+        {
             try
             {
                 if (id.HasValue)
@@ -39,42 +38,38 @@ namespace WebApp.Pages.Contacto
                         IdContacto = id
                     });
                 }
-                ProveedorLista = await proveedorService.GetLista();// LO ULTIMO
+                ProveedorLista = await proveedorService.GetLista();
                 return Page();
-
             }
-            catch (Exception Ex)
+            catch (Exception ex)
             {
-
-                return Content(Ex.Message);
+                return Content(ex.Message);
             }
         }
-
         public async Task<IActionResult> OnPost()
         {
             try
             {
                 var result = new DBEntity();
-                
                 if (Entity.IdContacto.HasValue)
                 {
                     result = await contactoService.Update(Entity);
-                    
+
                 }
                 else
-                {
-                    //Metedo de insercion 
+                {   //Metodo de Inserción
                     result = await contactoService.Create(Entity);
-                     
+
                 }
+
+
                 return new JsonResult(result);
             }
             catch (Exception ex)
             {
-                return new JsonResult(new DBEntity { CodeError = ex.HResult, MsgError = ex.Message });
-
+                return new JsonResult(new DBEntity
+                { CodeError = ex.HResult, MsgError = ex.Message });
             }
         }
-
     }
 }

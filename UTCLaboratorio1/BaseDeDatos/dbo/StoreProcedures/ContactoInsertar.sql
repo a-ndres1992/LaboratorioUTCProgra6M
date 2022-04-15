@@ -5,7 +5,7 @@
 	@PrimerApellido VARCHAR(250),
 	@SegundoApellido VARCHAR(250)
 AS
-Begin
+BEGIN
 	SET NOCOUNT ON
 		BEGIN TRANSACTION TRASA
 			BEGIN TRY

@@ -1,4 +1,62 @@
 ﻿@page
 @model WebApp.Pages.Contacto.EditModel
-@{
+@{ 
+}
+<div id="AppEdit" class="container" data-entity="@JsonSerializer.Serialize(Model.Entity)" v-cloak>
+    <div class="card">
+        <div class="card-header">
+            @(Model.id.HasValue?"Actualizar":"Nuevo")
+        </div>
+        <div class="card-body">
+            <form id="FormEdit" method="post">
+                <input type="hidden" asp-for="Entity.IdContacto" />
+
+                <div class="form-group mb-3">
+                    <label for="Entity.IdProveedor" class="form-label">Proveedor</label>
+                    <select class="form-select" asp-for="Entity.IdProveedor" v-model="Entity.IdProveedor"
+                            asp-items="@(new SelectList(Model.ProveedorLista, "IdProveedor", "Nombre"))" required>
+                    </select>
+                </div>
+
+
+                <div class="form-group mb-3">
+                    <label for="Entity.Identificacion" class="form-label">Identificacion</label>
+                    <input type="text" class="form-control" asp-for="Entity.Identificacion" v-model="Entity.Identificacion" maxlength="250" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.Nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" asp-for="Entity.Nombre" v-model="Entity.Nombre" maxlength="250" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.PrimerApellido" class="form-label">Primer Apellido</label>
+                    <input type="text" class="form-control" asp-for="Entity.PrimerApellido" v-model="Entity.PrimerApellido" maxlength="250" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.SegundoApellido" class="form-label">Segundo Apellido</label>
+                    <input type="text" class="form-control" asp-for="Entity.SegundoApellido" v-model="Entity.SegundoApellido" maxlength="250" required>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-4">
+                        <button type="button" @@click="Save" class="btn btn-primary">
+                            @(Model.id.HasValue?"Actualizar":"Agregar")
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    .
+</div>
+
+@section Scripts{
+
+    <script defer src="~/App/Contacto/Edit.js"></script>
+
 }

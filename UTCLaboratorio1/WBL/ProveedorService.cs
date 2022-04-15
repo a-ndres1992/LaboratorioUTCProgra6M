@@ -13,9 +13,9 @@ namespace WBL
         Task<DBEntity> Create(ProveedorEntity entity);
         Task<DBEntity> Delete(ProveedorEntity entity);
         Task<IEnumerable<ProveedorEntity>> Get();
+        Task<IEnumerable<ProveedorEntity>> GetLista();
         Task<ProveedorEntity> GetById(ProveedorEntity entity);
         Task<DBEntity> Update(ProveedorEntity entity);
-        Task<IEnumerable<ProveedorEntity>> GetLista();
     }
 
     public class ProveedorService : IProveedorService
